@@ -138,6 +138,51 @@ function updateDisplay() {
 
     zaktualizujPrzyciski();
     zmienNapis();
+    zdarzenieLosowe();
+}
+
+function prawdopodobienstwoProblemu(ujebaniStudenciSuma) {
+    if(ujebaniStudenciSuma <= 1000) {
+        return 0;
+    } else if(ujebaniStudenciSuma <= 5000) {
+        return 0.05;
+    } else if(ujebaniStudenciSuma <= 20000) {
+        return 0.1;
+    } else if(ujebaniStudenciSuma <= 35000) {
+        return 0.15;
+    } else if(ujebaniStudenciSuma <= 100000) {
+        return 0.2;
+    } else if(ujebaniStudenciSuma <= 500000) {
+        return 0.3;
+    } else if(ujebaniStudenciSuma <= 750000) {
+        return 0.35;
+    } else if(ujebaniStudenciSuma <= 1000000) {
+        return 0.36;
+    } else if(ujebaniStudenciSuma <= 1250000) {
+        return 0.37;
+    } else if(ujebaniStudenciSuma <= 1500000) {
+        return 0.4;
+    } else if(ujebaniStudenciSuma <= 1750000) {
+        return 0.42;
+    } else if(ujebaniStudenciSuma <= 2500000) {
+        return 0.5;
+    } else {
+        return 0;
+    }
+}
+
+function zdarzenieLosowe() {
+    var prawdopodobienstwo = prawdopodobienstwoProblemu(ujebaniStudenciSuma);
+    if(Math.random() < prawdopodobienstwo) {
+        //No bywa, coś się spierdoliło
+        //Ubywa studentów
+        var ilePrzeszlo = Math.floor((Math.random()*200) + 1);
+        ujebaniStudenciSuma -= ilePrzeszlo;
+        ujebaniStudenciObecnie -= ilePrzeszlo;
+        alert(ilePrzeszlo + " studentom udało się przemycić ściągę, mniej ujebania.");
+    } else {
+        // Akurat się udało
+    }
 }
 
 function kup(coKupic) {
