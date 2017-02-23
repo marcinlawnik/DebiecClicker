@@ -1,0 +1,154 @@
+
+
+
+
+
+<html><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title> Symulator Janusza 2014 :: </title>
+    <link rel="stylesheet" href="files/jew.css" type="text/css">
+    <script src="files/ga.js" async="" type="text/javascript"></script><script src="files/jav.js"></script>
+
+    <meta charset="UTF-8">
+
+    <script language="javascript" type="text/javascript">
+        var t;
+        var colour=new Array("blue","yellow","lime","magenta","aqua","green","orange","crimson","royalblue","hotpink","indigo","dodgerblue","chartreuse","skyblue","red");
+        var backi=0;
+        var colouri=1;
+        var standard = document.title;
+        var totalC = standard.length;
+
+        function call_janusz(){
+            document.getElementById("disco_music").setAttribute("src","http://fleo.se/hyperavemv0.swf");
+            document.getElementById("first").innerHTML = "Nie zdam bo Janusz";
+            document.getElementById("second").innerHTML = "Nie zdam bo Janusz";
+            document.getElementById("bg_cont").style.height="800px";
+            window.scrollTo(0,document.body.scrollHeight);
+            repeat();
+        }
+
+        function repeat(){
+
+            backi=backi+1;
+            if(backi>=colour.length){
+                backi=0;
+            }
+
+            colouri=colouri+1;
+            if(colouri>=colour.length){
+                colouri=0;
+            }
+
+            document.body.style.backgroundColor = colour[backi];
+            document.body.style.color = colour[colouri];
+
+            var tal = Math.round(Math.random()*250);
+            document.getElementById("first").style.fontSize = tal+50;
+            document.getElementById("second").style.fontSize = 300-tal;
+
+
+            standard = standard.substr(1,totalC)+standard.substr(0,1);
+            document.title=standard;
+
+            t=setTimeout('repeat()', 50);
+
+        }
+    </script>
+
+</head>
+
+<body onload="tick();">
+
+
+
+<h1>Symulator Sesji u Janusza 2014</h1>
+
+<div class="magicCenterElement" id="slogan">Gra nie ma na celu obrażania i zniesławiania jakiejkolwiek osoby, instytucji lub Janusza.</div>
+
+<div class="shekelDisplay" id="shekelDisplay">0</div>
+<div class="shekelDisplay" id="shekelFlavorText">ujebanych studentów</div>
+<div class="magicCenterElement" id="allTimeDicksSucked">(W sumie ujebałeś 0 studentów)</div>
+
+<div class="magicCenterElement" id="stoleShekelButtonContainer">
+    <button id="stoleShekelButton" onmousedown="gibeShekel()">Upierdol kilku biednych studentów</button><br>
+</div>
+
+<div class="magicCenterElement">
+    <small id="multiplierDisplay"><br><div>Studentów ujebanych za kliknięcie: 1</div></small><br>
+    <small id="dpsDisplay"> <br<div>Studentów ujebanych na sekundę:  0</br<div></small>
+</div>
+
+<div class="magicCenterElement" id="footer">
+
+    <small>
+        <br><b>
+        Gra ma na celu umożliwienie wejścia w skórę Janusza T. i odtworzenie jego ścieżki kariery zawodowej.
+        <br>
+        Polecam również stronę na której znajdziecie aktualne <a href="http://www.imir.agh.edu.pl/pl/studenci/blankiety_dokumenty/blankiety/" title="imir">ceny warunków na IMIRze i podania o kontynuowanie studiów z deficytem punktów ECTS.</a><br></b>
+    </small>
+</div>
+<div class="magicCenterElement" id="shopContainer">
+
+
+    <table align="center">
+        <tbody><tr>
+            <td><button class="buyButton" id="buyGoyMercButton" onclick="buy('goyMerc')" disabled="disabled"><b>Puść listę na wykładzie</b><br>50 studentów (+1studentów)<br>Kupionych:: <b>0</b></button></td>
+
+            <td><button class="buyButton" id="buyCheapJewButton" onclick="buy('cheapJew')" disabled="disabled"><b>Wprowadź nieobowiązkowy dodatkowy materiał obowiązkowy</b><br>300 studentów (+1klik, +2studentów)<br>Kupionych:: <b>0</b></button> </td>
+            <td><button class="buyButton" id="buyVacuumCleanerButton" onclick="buy('vacuumCleaner')" disabled="disabled"><b>Nie przyjdź na własne konsultacje</b><br>600 studentów (+2klik, +3studentów)<br>Kupionych:: <b>0</b></button></td>
+            <td><button class="buyButton" id="buyBeggarPloxButton" onclick="buy('beggarPlox')" disabled="disabled"><b>Zaliczenie od 70%</b><br>2,000 studentów (+3klik, +5studentów)<br>Kupionych:: <b>0</b></button></td>
+        </tr>
+        <tr>
+            <td><button class="buyButton" id="buyTaxMenButton" onclick="buy('taxMen')" disabled="disabled"><b>Wymagaj swoich rysunków</b><br>4,000 studentów (+4klik, +7studentów)<br>Kupionych:: <b>0</b></button></td>
+            <td><button class="buyButton" id="buyCreditCompanyButton" onclick="buy('creditCompany')" disabled="disabled"><b>Egzamin ustny</b><br>7,500 studentów (+5klik, +10studentów)<br>Kupionych:: <b>0</b></button></td>
+            <td><button class="buyButton" id="buySinagogaButton" onclick="buy('sinagoga')" disabled="disabled"><b>Wrzuć zadania ze swojej pracy doktorskiej</b><br>10,000 studentów (+7klik, +12studentów)<br>Kupionych:: <b>0</b></button></td>
+            <td><button class="buyButton" id="buyJewHospitalButton" onclick="buy('jewHospital')" disabled="disabled"><b>Nie przyjdź na egzamin, a potem powiedz, że nikt nie przyszedł</b><br>20,000 studentów (+9klik, +15studentów)<br>Kupionych:: <b>0</b></button></td>
+        </tr>
+        <tr>
+            <td><button class="buyButton" id="buyMcDonaldsButton" onclick="buy('mcDonalds')" disabled="disabled"><b>Wyznacz wszystkie egzaminy poprawkowe w tym samym dniu</b><br>50,000 studentów (+11klik, +18studentów)<br>Kupionych:: <b>0</b></button></td>
+            <td><button class="buyButton" id="buyMassonButton" onclick="buy('masson')" disabled="disabled"><b>Ogłoś wyniki pierwszego terminu w marcu</b><br>200,000 studentów (+15klik, +25studentów)<br>Kupionych:: <b>0</b></button></td>
+            <td><button class="buyButton" id="buyOdessaModeButton" onclick="buy('OdessaMode')" disabled="disabled"><b>Przygotuj test - wielokrotny wybór i żadna odpowiedź nie jest poprawna</b><br>500,000 studentów (Efekt: ???)</button>
+            </td><td><button class="buyButton" id="buySteamButton" onclick="buy('steam')" disabled="disabled"><b>Zlikwiduj cały kierunek</b><br>750,000 studentów (2 razy więcej ujebanych studentów)</button>
+            <audio src="files/janusz.htm" id="ST" class="hidden"></audio></td>
+        </tr>
+        </tbody></table>
+    <!--<div><center><p>Janusza odwiedziło już: </p></center></div>-->
+    <div class="magicCenterElement" id="grafixContainer">
+
+    </div>
+
+
+    <audio src="files/janusz.ogg" id="steam" class="hidden">
+
+        <div id="musicplayer"> 					</div>
+        <script>
+            var player2 = document.getElementById("steam");
+            function music_play2()
+            {
+                player2.play();
+            }
+
+
+        </script>
+
+    </audio></div>
+
+<div id="bg_cont">
+    <center>
+        <span id="first"></span><br><span id="second"></span></center>
+    <!--
+    Disco is made by Gustav Arnesson (http://storag.se) and Johan Lindell (http://fleo.se).
+    The webpage is released under Creative Commons BY-NC-SA, the music is NOT released under the same license and you are not allowed to copy it!
+
+    This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 2.5 Sweden License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/2.5/se/ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
+    -->
+    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" height="1" width="1">
+        <param name="movie" value="http://fleo.se/hyperavemv0.swf">
+        <param name="quality" value="high">
+        <param name="wmode" value="transparent">
+        <embed src="" id="disco_music" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" height="1" width="1">
+    </object>
+</div>
+
+<!-- Footer //]]>'"</script></style></iframe></noembed></embed></object></noscript>--><div id="prv_main_link"><a href="http://www.prv.pl" title="darmowy hosting">Darmowy hosting</a> zapewnia PRV.PL</div><script type="text/javascript" src="/prv_site_config_values.js"></script><script type="text/javascript" src="http://hosting2.keep.pl/prv_hosting_footer.js"></script></body></html>
