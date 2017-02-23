@@ -1,0 +1,130 @@
+body
+{
+    background-size: 100% auto;
+
+
+
+}
+h1 {
+    font-size: 48px;
+    margin: auto;
+    background:#146E08;
+    color:#FFF;
+
+
+
+}
+
+div.shekelDisplay, .magicCenterElement, h1 {
+    width: 100%;
+
+    text-align: center;
+
+}
+
+div.shekelDisplay {
+    font-family: Helvetica;
+    font-size: 25px;
+    background:#660000;
+    color:#FFF;
+    text-align: center;
+    padding:10px;
+
+}
+button
+{
+    background:#660000;
+    color:#FFF;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+
+
+}
+
+#send_score{
+    width: 200px;
+    height: 30px;
+    background:#146E08;
+    color:#FFF;
+    font-size:7pt;
+}
+.buyButton {
+    width: 275px;
+    height: 75px;
+    white-space: normal;
+}
+
+#slogan
+{
+    background:#222;
+    color:#FFF;
+    font-style: italic;
+    font-size:20px;
+
+}
+
+#allTimeDicksSucked {
+    margin-bottom: 30px;
+    font-style: italic;
+
+}
+
+#allTimeDicksSucked {
+    font-size: 12px;
+}
+
+#stoleShekelButton {
+    width: 400px;
+    height: 100px;
+    background:#0047E0;
+    color:#FFF;
+    font-size:20pt;
+
+}
+
+.hidden {
+    display: none;
+}
+
+#shopContainer, #grafixContainer {
+
+
+    padding: auto;
+
+}
+
+#shopContainer {
+
+    margin-left: 10%;
+    width: 275px;
+    height: 275px;
+}
+
+#grafixContainer {
+    margin:auto;
+
+
+}
+
+#footer {
+    margin-bottom: 10px;
+
+    bottom: 0;
+    width: 99%;
+}
+#version
+{
+    margin-left: auto;
+    margin-right:auto;
+    color:#FFF;
+    background:#000;
+}
+.grafix {
+
+}
+
+#bg_cont{
+    height:0px;
+}

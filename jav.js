@@ -1,9 +1,9 @@
 
 var time_diff = 0;
-var shekeliStolen = 0;
-var allTimeShekeli = 0;
-var multiplier = 1;
-var currentDPS = 0;
+var ujebaniStudenciObecnie = 0;
+var ujebaniStudenciSuma = 0;
+var mnoznik = 1;
+var ujebaniStudenciNaSekunde = 0;
 
 var goyMercCounter = 0;
 var cheapJewCounter = 0;
@@ -18,7 +18,7 @@ var jewHospitalCounter = 0;
 var mcDonaldsCounter = 0;
 var massonCounter = 0;
 
-// Prices
+// Ceny
 // Tier 1
 var goyMercPrice = 50;
 var cheapJewPrice = 300;
@@ -40,7 +40,7 @@ var steamPrice = 750000;
 var OdessaModePrice = 500000;
 
 
-// Multipliers
+// Mnożniki
 // Tier 1
 var goyMercMultiplier = 0;
 var cheapJewMultiplier = 1;
@@ -61,7 +61,7 @@ var massonMultiplier = 15;
 var OdessaModeMultiplier = 30;
 var steamMultiplier = 100;
 
-// DPS counters
+// Dodatki ujebania na sekundę
 // Tier 1
 var goyMercDPS = 1;
 var cheapJewDPS = 2;
@@ -90,10 +90,10 @@ var hasSteamMode = false;
 
 window.setInterval(tick, 1000);
 
-function gibeShekel() {
+function ujebStudenta() {
     // this is for debugging
-    shekeliStolen += multiplier;
-    allTimeShekeli += multiplier;
+    ujebaniStudenciObecnie += mnoznik;
+    ujebaniStudenciSuma += mnoznik;
     updateDisplay();
 }
 
@@ -101,14 +101,14 @@ function updateDisplay() {
 
     time_diff = time_tick - base_time;
     // Display elements
-    document.getElementById("shekelDisplay").innerHTML = beautify(shekeliStolen);
+    document.getElementById("shekelDisplay").innerHTML = beautify(ujebaniStudenciObecnie);
     document.getElementById("shekelFlavorText").innerHTML = displayString;
-    document.getElementById("score").innerHTML = shekeliStolen;
+    document.getElementById("score").innerHTML = ujebaniStudenciObecnie;
     document.getElementById("janusz_time").innerHTML = seconds_to_time(time_diff);
     document.getElementById("janusz_time2").innerHTML = "<div>Przejebałeś z Januszem <b>" +seconds_to_time(time_diff) + "</b></div>";
-    document.getElementById("multiplierDisplay").innerHTML = "<div>Studentów ujebanych za kliknięcie: <b>" + beautify(multiplier) + "</b></div>" ;
-    document.getElementById("dpsDisplay").innerHTML = " <div>Studentów ujebanych na sekundę:  <b>" + beautify(currentDPS)+ "</b></div>";
-    document.getElementById("allTimeDicksSucked").innerHTML = "(W sumie ujebałeś " + beautify(allTimeShekeli) + " studentów)";
+    document.getElementById("multiplierDisplay").innerHTML = "<div>Studentów ujebanych za kliknięcie: <b>" + beautify(mnoznik) + "</b></div>" ;
+    document.getElementById("dpsDisplay").innerHTML = " <div>Studentów ujebanych na sekundę:  <b>" + beautify(ujebaniStudenciNaSekunde)+ "</b></div>";
+    document.getElementById("allTimeDicksSucked").innerHTML = "(W sumie ujebałeś " + beautify(ujebaniStudenciSuma) + " studentów)";
 
     // Tier 1
     document.getElementById("buyGoyMercButton").innerHTML = "<b>Puść listę na wykładzie</b><br />" + beautify(goyMercPrice) + " studentów (+" + beautify(goyMercDPS) + "studentów)<br />Kupionych:: <b>"+beautify(goyMercCounter)+"</b>";
@@ -136,101 +136,101 @@ function updateDisplay() {
     if (hasOdessaMode == false)
         document.getElementById("buyOdessaModeButton").innerHTML = "<b>Przygotuj test - wielokrotny wybór i żadna odpowiedź nie jest poprawna</b><br />" + beautify(OdessaModePrice) + " studentów (Efekt: ???)";
 
-    toggleButtons();
-    updateSlogan();
+    zaktualizujPrzyciski();
+    zmienNapis();
 }
 
-function buy(whatToBuy) {
+function kup(coKupic) {
     // Tier 1
-    if(whatToBuy == "goyMerc") {
-        if(shekeliStolen >= goyMercPrice) {
+    if(coKupic == "goyMerc") {
+        if(ujebaniStudenciObecnie >= goyMercPrice) {
             goyMercCounter += 1;
-            shekeliStolen -= goyMercPrice;
-            multiplier += goyMercMultiplier;
-            currentDPS += goyMercDPS;
+            ujebaniStudenciObecnie -= goyMercPrice;
+            mnoznik += goyMercMultiplier;
+            ujebaniStudenciNaSekunde += goyMercDPS;
             goyMercPrice = Math.round(goyMercPrice * 1.1);
         }
-    } else if(whatToBuy == "cheapJew") {
-        if(shekeliStolen >= cheapJewPrice) {
+    } else if(coKupic == "cheapJew") {
+        if(ujebaniStudenciObecnie >= cheapJewPrice) {
             cheapJewCounter += 1;
-            shekeliStolen -= cheapJewPrice;
-            multiplier += cheapJewMultiplier;
-            currentDPS += cheapJewDPS;
+            ujebaniStudenciObecnie -= cheapJewPrice;
+            mnoznik += cheapJewMultiplier;
+            ujebaniStudenciNaSekunde += cheapJewDPS;
             cheapJewPrice = Math.round(cheapJewPrice * 1.1);
         }
-    } else if(whatToBuy == "vacuumCleaner") {
-        if(shekeliStolen >= vacuumCleanerPrice) {
+    } else if(coKupic == "vacuumCleaner") {
+        if(ujebaniStudenciObecnie >= vacuumCleanerPrice) {
             vacuumCleanerCounter += 1;
-            shekeliStolen -= vacuumCleanerPrice;
-            multiplier += vacuumCleanerMultiplier;
-            currentDPS += vacuumCleanerDPS;
+            ujebaniStudenciObecnie -= vacuumCleanerPrice;
+            mnoznik += vacuumCleanerMultiplier;
+            ujebaniStudenciNaSekunde += vacuumCleanerDPS;
             vacuumCleanerPrice = Math.round(vacuumCleanerPrice * 1.1);
         }
         // Tier 2
-    } else if(whatToBuy == "beggarPlox") {
-        if(shekeliStolen >= beggarPloxPrice) {
+    } else if(coKupic == "beggarPlox") {
+        if(ujebaniStudenciObecnie >= beggarPloxPrice) {
             beggarPloxCounter += 1;
-            shekeliStolen -= beggarPloxPrice;
-            multiplier += beggarPloxMultiplier;
-            currentDPS += beggarPloxDPS;
+            ujebaniStudenciObecnie -= beggarPloxPrice;
+            mnoznik += beggarPloxMultiplier;
+            ujebaniStudenciNaSekunde += beggarPloxDPS;
             beggarPloxPrice = Math.round(beggarPloxPrice * 1.1);
         }
-    } else if(whatToBuy == "taxMen") {
-        if(shekeliStolen >= taxMenPrice) {
+    } else if(coKupic == "taxMen") {
+        if(ujebaniStudenciObecnie >= taxMenPrice) {
             taxMenCounter += 1;
-            shekeliStolen -= taxMenPrice;
-            multiplier += taxMenMultiplier;
-            currentDPS += taxMenDPS;
+            ujebaniStudenciObecnie -= taxMenPrice;
+            mnoznik += taxMenMultiplier;
+            ujebaniStudenciNaSekunde += taxMenDPS;
             taxMenPrice = Math.round(taxMenPrice * 1.1);
         }
-    } else if(whatToBuy == "creditCompany") {
-        if(shekeliStolen >= creditCompanyPrice) {
+    } else if(coKupic == "creditCompany") {
+        if(ujebaniStudenciObecnie >= creditCompanyPrice) {
             creditCompanyCounter += 1;
-            shekeliStolen -= creditCompanyPrice;
-            multiplier += creditCompanyMultiplier;
-            currentDPS += creditCompanyDPS;
+            ujebaniStudenciObecnie -= creditCompanyPrice;
+            mnoznik += creditCompanyMultiplier;
+            ujebaniStudenciNaSekunde += creditCompanyDPS;
             creditCompanyPrice = Math.round(creditCompanyPrice * 1.1);
         }
         // Tier 3
-    } else if(whatToBuy == "sinagoga") {
-        if(shekeliStolen >= sinagogaPrice) {
+    } else if(coKupic == "sinagoga") {
+        if(ujebaniStudenciObecnie >= sinagogaPrice) {
             sinagogaCounter += 1;
-            shekeliStolen -= sinagogaPrice;
-            multiplier += sinagogaMultiplier;
-            currentDPS += sinagogaDPS;
+            ujebaniStudenciObecnie -= sinagogaPrice;
+            mnoznik += sinagogaMultiplier;
+            ujebaniStudenciNaSekunde += sinagogaDPS;
             sinagogaPrice = Math.round(sinagogaPrice * 1.1);
         }
-    } else if(whatToBuy == "jewHospital") {
-        if(shekeliStolen >= jewHospitalPrice) {
+    } else if(coKupic == "jewHospital") {
+        if(ujebaniStudenciObecnie >= jewHospitalPrice) {
             jewHospitalCounter += 1;
-            shekeliStolen -= jewHospitalPrice;
-            multiplier += jewHospitalMultiplier;
-            currentDPS += jewHospitalDPS;
+            ujebaniStudenciObecnie -= jewHospitalPrice;
+            mnoznik += jewHospitalMultiplier;
+            ujebaniStudenciNaSekunde += jewHospitalDPS;
             jewHospitalPrice = Math.round(jewHospitalPrice * 1.1);
         }
-    } else if(whatToBuy == "mcDonalds") {
-        if(shekeliStolen >= mcDonaldsPrice) {
+    } else if(coKupic == "mcDonalds") {
+        if(ujebaniStudenciObecnie >= mcDonaldsPrice) {
             mcDonaldsCounter += 1;
-            shekeliStolen -= mcDonaldsPrice;
-            multiplier += mcDonaldsMultiplier;
-            currentDPS += mcDonaldsDPS;
+            ujebaniStudenciObecnie -= mcDonaldsPrice;
+            mnoznik += mcDonaldsMultiplier;
+            ujebaniStudenciNaSekunde += mcDonaldsDPS;
             mcDonaldsPrice = Math.round(mcDonaldsPrice * 1.1);
         }
-    } else if(whatToBuy == "masson") {
-        if(shekeliStolen >= massonPrice) {
+    } else if(coKupic == "masson") {
+        if(ujebaniStudenciObecnie >= massonPrice) {
             massonCounter += 1;
-            shekeliStolen -= massonPrice;
-            multiplier += massonMultiplier;
-            currentDPS += massonDPS;
+            ujebaniStudenciObecnie -= massonPrice;
+            mnoznik += massonMultiplier;
+            ujebaniStudenciNaSekunde += massonDPS;
             massonPrice = Math.round(massonPrice * 1.1);
         }
         // Consumables
 
-    } else if(whatToBuy == "OdessaMode") {
-        if(shekeliStolen >= OdessaModePrice) {
-            shekeliStolen -= OdessaModePrice;
-            multiplier += OdessaModeMultiplier;
-            currentDPS += OdessaModeDPS;
+    } else if(coKupic == "OdessaMode") {
+        if(ujebaniStudenciObecnie >= OdessaModePrice) {
+            ujebaniStudenciObecnie -= OdessaModePrice;
+            mnoznik += OdessaModeMultiplier;
+            ujebaniStudenciNaSekunde += OdessaModeDPS;
 
             if(hasSteamMode == true) {
                 displayString = "Od wprowadzenia turbo-egzaminu ujebałeś:";
@@ -245,11 +245,11 @@ function buy(whatToBuy) {
 
             hasOdessaMode = true;
         }
-    } else if(whatToBuy == "steam") {
-        if(shekeliStolen >= steamPrice) {
-            shekeliStolen -= steamPrice;
-            multiplier += steamMultiplier;
-            currentDPS += steamDPS;
+    } else if(coKupic == "steam") {
+        if(ujebaniStudenciObecnie >= steamPrice) {
+            ujebaniStudenciObecnie -= steamPrice;
+            mnoznik += steamMultiplier;
+            ujebaniStudenciNaSekunde += steamDPS;
 
             if(hasOdessaMode == true) {
                 displayString = "Od zlikwidowania kierunku ujebałeś:";
@@ -268,76 +268,76 @@ function buy(whatToBuy) {
     updateDisplay();
 }
 //createGrafix(whatToBuy);^^
-function toggleButtons() {
+function zaktualizujPrzyciski() {
     // Tier 1
-    if(shekeliStolen < goyMercPrice) {
+    if(ujebaniStudenciObecnie < goyMercPrice) {
         document.getElementById("buyGoyMercButton").disabled = true;
     } else {
         document.getElementById("buyGoyMercButton").disabled = false;
     }
 
-    if(shekeliStolen < cheapJewPrice) {
+    if(ujebaniStudenciObecnie < cheapJewPrice) {
         document.getElementById("buyCheapJewButton").disabled = true;
     } else {
         document.getElementById("buyCheapJewButton").disabled = false;
     }
 
-    if(shekeliStolen < vacuumCleanerPrice) {
+    if(ujebaniStudenciObecnie < vacuumCleanerPrice) {
         document.getElementById("buyVacuumCleanerButton").disabled = true;
     } else {
         document.getElementById("buyVacuumCleanerButton").disabled = false;
     }
     // Tier 2
-    if(shekeliStolen < beggarPloxPrice) {
+    if(ujebaniStudenciObecnie < beggarPloxPrice) {
         document.getElementById("buyBeggarPloxButton").disabled = true;
     } else {
         document.getElementById("buyBeggarPloxButton").disabled = false;
     }
 
-    if(shekeliStolen < taxMenPrice) {
+    if(ujebaniStudenciObecnie < taxMenPrice) {
         document.getElementById("buyTaxMenButton").disabled = true;
     } else {
         document.getElementById("buyTaxMenButton").disabled = false;
     }
 
-    if(shekeliStolen < creditCompanyPrice) {
+    if(ujebaniStudenciObecnie < creditCompanyPrice) {
         document.getElementById("buyCreditCompanyButton").disabled = true;
     } else {
         document.getElementById("buyCreditCompanyButton").disabled = false;
     }
     // Tier 3
-    if(shekeliStolen < sinagogaPrice) {
+    if(ujebaniStudenciObecnie < sinagogaPrice) {
         document.getElementById("buySinagogaButton").disabled = true;
     } else {
         document.getElementById("buySinagogaButton").disabled = false;
     }
 
-    if(shekeliStolen < jewHospitalPrice) {
+    if(ujebaniStudenciObecnie < jewHospitalPrice) {
         document.getElementById("buyJewHospitalButton").disabled = true;
     } else {
         document.getElementById("buyJewHospitalButton").disabled = false;
     }
 
-    if(shekeliStolen < mcDonaldsPrice) {
+    if(ujebaniStudenciObecnie < mcDonaldsPrice) {
         document.getElementById("buyMcDonaldsButton").disabled = true;
     } else {
         document.getElementById("buyMcDonaldsButton").disabled = false;
     }
 
-    if(shekeliStolen < massonPrice) {
+    if(ujebaniStudenciObecnie < massonPrice) {
         document.getElementById("buyMassonButton").disabled = true;
     } else {
         document.getElementById("buyMassonButton").disabled = false;
     }
 
     // Consumables
-    if(shekeliStolen < steamPrice) {
+    if(ujebaniStudenciObecnie < steamPrice) {
         document.getElementById("buySteamButton").disabled = true;
     } else {
         document.getElementById("buySteamButton").disabled = false;
     }
 
-    if(shekeliStolen < OdessaModePrice) {
+    if(ujebaniStudenciObecnie < OdessaModePrice) {
         document.getElementById("buyOdessaModeButton").disabled = true;
     } else {
         document.getElementById("buyOdessaModeButton").disabled = false;
@@ -348,8 +348,8 @@ function toggleButtons() {
 
 function tick() {
     if(window_focus==true || dialog_opened==false){
-        shekeliStolen += currentDPS;
-        allTimeShekeli += currentDPS;
+        ujebaniStudenciObecnie += ujebaniStudenciNaSekunde;
+        ujebaniStudenciSuma += ujebaniStudenciNaSekunde;
         time_tick++;
     }
     updateDisplay();
@@ -383,48 +383,48 @@ function createGrafix(which) {
 
 }
 
-function updateSlogan() {
+function zmienNapis() {
     var slogan = document.getElementById("slogan");
 
-    if(allTimeShekeli <= 250) {
+    if(ujebaniStudenciSuma <= 250) {
         slogan.innerHTML = "Gra nie ma na celu obrażania i zniesławiania jakiejkolwiek osoby, instytucji lub Janusza.";
-    } else if(allTimeShekeli <= 500) {
+    } else if(ujebaniStudenciSuma <= 500) {
         slogan.innerHTML = "Zostałeś przydzielony na AGH.";
-    } else if(allTimeShekeli <= 1000) {
+    } else if(ujebaniStudenciSuma <= 1000) {
         slogan.innerHTML = "Studenci zaczynają się niepokoić ilością i szybkością omawianego materiału.";
-    } else if(allTimeShekeli <= 5000) {
+    } else if(ujebaniStudenciSuma <= 5000) {
         slogan.innerHTML = "Pojawiają się pierwsze głosy krytyki na twój temat.";
-    } else if(allTimeShekeli <= 10000) {
+    } else if(ujebaniStudenciSuma <= 10000) {
         slogan.innerHTML = "Studenci nie wiedzą co dzieje się na wykładzie.";
-    } else if(allTimeShekeli <= 20000) {
+    } else if(ujebaniStudenciSuma <= 20000) {
         slogan.innerHTML = "Ćwiczeniowcy załamują ręcę nad twoimi pomysłami.";
-    } else if(allTimeShekeli <= 35000) {
+    } else if(ujebaniStudenciSuma <= 35000) {
         slogan.innerHTML = "Na wykładzie ktoś krzyknął 'co ci zrobiłem ty ch**u'.";
-    } else if(allTimeShekeli <= 50000) {
+    } else if(ujebaniStudenciSuma <= 50000) {
         slogan.innerHTML = "Na twój temat powstają smutne piosenki.";
-    } else if(allTimeShekeli <= 100000) {
+    } else if(ujebaniStudenciSuma <= 100000) {
         slogan.innerHTML = "Inni wykładowcy patrzą z zazdrością na kolejki pod twoim gabinetem.";
-    } else if(allTimeShekeli <= 200000) {
+    } else if(ujebaniStudenciSuma <= 200000) {
         slogan.innerHTML = "Kadra naukowa ma cię za dziwaka.";
-    } else if(allTimeShekeli <= 350000) {
+    } else if(ujebaniStudenciSuma <= 350000) {
         slogan.innerHTML = "Zrujnowałeś już wiele ludzkich istnień.";
-    } else if(allTimeShekeli <= 500000) {
+    } else if(ujebaniStudenciSuma <= 500000) {
         slogan.innerHTML = "Przestajesz zwracać uwagę co piszesz na tablicy.";
-    } else if(allTimeShekeli <= 750000) {
+    } else if(ujebaniStudenciSuma <= 750000) {
         slogan.innerHTML = "Pierwsze przypadki samobójstw.";
-    } else if(allTimeShekeli <= 1000000) {
+    } else if(ujebaniStudenciSuma <= 1000000) {
         slogan.innerHTML = "Studenci rozłożyli obóz i masowo protestują pod wydziałem matematyki stosowanej.";
-    } else if(allTimeShekeli <= 1250000) {
+    } else if(ujebaniStudenciSuma <= 1250000) {
         slogan.innerHTML = "Dostajesz gratulacje od premiera za milionowe wpływy z warunków do budżetu.";
-    } else if(allTimeShekeli <= 1500000) {
+    } else if(ujebaniStudenciSuma <= 1500000) {
         slogan.innerHTML = "Uwaliłeś najwięcej studentów w historii uczelni jeszcze przed sesją.";
-    } else if(allTimeShekeli <= 1750000) {
+    } else if(ujebaniStudenciSuma <= 1750000) {
         slogan.innerHTML = "Wykładowcy z Korei Północnej przyjeżdżają podglądać twoje metody.";
-    } else if(allTimeShekeli <= 2000000) {
+    } else if(ujebaniStudenciSuma <= 2000000) {
         slogan.innerHTML = "Już nikt nie dotrwał do inżyniera od 3 lat.";
-    } else if(allTimeShekeli <= 2500000) {
+    } else if(ujebaniStudenciSuma <= 2500000) {
         slogan.innerHTML = "Zrozpaczeni rodzice studentów błagają żebyś odszedł oferując miliard dolarów i prywatny odrzutowiec.";
-    } else if(allTimeShekeli <= 3000000) {
+    } else if(ujebaniStudenciSuma <= 3000000) {
         slogan.innerHTML = "W kraju zostali już tylko studenci studiów humanistycznych.";
     } else {
         slogan.innerHTML = "Już czas przestać ujebywać swoich studentów. Ktoś musi studiować.";
