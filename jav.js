@@ -388,7 +388,7 @@ function zaktualizujPrzyciski() {
         document.getElementById("buyOdessaModeButton").disabled = false;
     }
 
-    document.getElementById("send_score").disabled = false;
+    // document.getElementById("send_score").disabled = false;
 }
 
 function tick() {
