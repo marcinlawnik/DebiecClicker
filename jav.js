@@ -138,7 +138,7 @@ function updateDisplay() {
 
     zaktualizujPrzyciski();
     zmienNapis();
-    zdarzenieLosowe();
+    // zdarzenieLosowe();
 }
 
 function prawdopodobienstwoProblemu(ujebaniStudenciSuma) {
