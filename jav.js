@@ -127,8 +127,8 @@ function updateDisplay() {
     // Tier 3
     document.getElementById("buySinagogaButton").innerHTML = "<b>Każ obejrzeć 3/4 wykładu na EPUEPSie</b><br />" + beautify(sinagogaPrice) + " studentów (+" + beautify(sinagogaMultiplier) + "klik, +" + beautify(sinagogaDPS) + "studentów)<br />Kupionych:: <b>"+beautify(sinagogaCounter)+"</b>";
     document.getElementById("buyJewHospitalButton").innerHTML = "<b>Zorganizuj egzamin w sali obok półkolonii dla dzieci</b><br />" + beautify(jewHospitalPrice) + " studentów (+" + beautify(jewHospitalMultiplier) + "klik, +" + beautify(jewHospitalDPS) + "studentów)<br />Kupionych:: <b>"+beautify(jewHospitalCounter)+"</b>";
-    document.getElementById("buyMcDonaldsButton").innerHTML = "<b>Wyznacz wszystkie egzaminy poprawkowe w tym samym dniu</b><br />" + beautify(mcDonaldsPrice) + " studentów (+" + beautify(mcDonaldsMultiplier) + "klik, +" + beautify(mcDonaldsDPS) + "studentów)<br />Kupionych:: <b>"+beautify(mcDonaldsCounter)+"</b>";
-    document.getElementById("buyMassonButton").innerHTML = "<b>Ogłoś wyniki pierwszego terminu w marcu</b><br />" + beautify(massonPrice) + " studentów (+" + beautify(massonMultiplier) + "klik, +" + beautify(massonDPS) + "studentów)<br />Kupionych:: <b>"+beautify(massonCounter)+"</b>";
+    document.getElementById("buyMcDonaldsButton").innerHTML = "<b>Opowiedz o rakietach na wykładzie</b><br />" + beautify(mcDonaldsPrice) + " studentów (+" + beautify(mcDonaldsMultiplier) + "klik, +" + beautify(mcDonaldsDPS) + "studentów)<br />Kupionych:: <b>"+beautify(mcDonaldsCounter)+"</b>";
+    document.getElementById("buyMassonButton").innerHTML = "<b>Wyślij studentów na egzamin rozłożony w czasie i ujeb ich tam</b><br />" + beautify(massonPrice) + " studentów (+" + beautify(massonMultiplier) + "klik, +" + beautify(massonDPS) + "studentów)<br />Kupionych:: <b>"+beautify(massonCounter)+"</b>";
 
     // Consumables
     if (hasSteamMode == false)
