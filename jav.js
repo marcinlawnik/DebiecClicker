@@ -111,22 +111,22 @@ function updateDisplay() {
     document.getElementById("allTimeDicksSucked").innerHTML = "(W sumie ujebałeś " + beautify(ujebaniStudenciSuma) + " studentów)";
 
     // Tier 1
-    document.getElementById("buyGoyMercButton").innerHTML = "<b>Puść listę na wykładzie</b><br />" + beautify(goyMercPrice) + " studentów (+" + beautify(goyMercDPS) + "studentów)<br />Kupionych:: <b>"+beautify(goyMercCounter)+"</b>";
+    document.getElementById("buyGoyMercButton").innerHTML = "<b>Każ stworzyć rząd zerowy</b><br />" + beautify(goyMercPrice) + " studentów (+" + beautify(goyMercDPS) + "studentów)<br />Kupionych:: <b>"+beautify(goyMercCounter)+"</b>";
 
-    document.getElementById("buyCheapJewButton").innerHTML = "<b>Wprowadź nieobowiązkowy dodatkowy materiał obowiązkowy</b><br />" + beautify(cheapJewPrice) + " studentów (+" + beautify(cheapJewMultiplier) + "klik, +" + beautify(cheapJewDPS) + "studentów)<br />Kupionych:: <b>"+beautify(cheapJewCounter)+"</b>";
+    document.getElementById("buyCheapJewButton").innerHTML = "<b>Otwórz okno (orły nie wyfruną)</b><br />" + beautify(cheapJewPrice) + " studentów (+" + beautify(cheapJewMultiplier) + "klik, +" + beautify(cheapJewDPS) + "studentów)<br />Kupionych:: <b>"+beautify(cheapJewCounter)+"</b>";
 
-    document.getElementById("buyVacuumCleanerButton").innerHTML = "<b>Nie przyjdź na własne konsultacje</b><br />" + beautify(vacuumCleanerPrice) + " studentów (+" + beautify(vacuumCleanerMultiplier) + "klik, +" + beautify(vacuumCleanerDPS) + "studentów)<br />Kupionych:: <b>"+beautify(vacuumCleanerCounter)+"</b>";
+    document.getElementById("buyVacuumCleanerButton").innerHTML = "<b>Nie miej czasu podczas konsultacji</b><br />" + beautify(vacuumCleanerPrice) + " studentów (+" + beautify(vacuumCleanerMultiplier) + "klik, +" + beautify(vacuumCleanerDPS) + "studentów)<br />Kupionych:: <b>"+beautify(vacuumCleanerCounter)+"</b>";
 
     // Tier 2
     document.getElementById("buyBeggarPloxButton").innerHTML = "<b>Zaliczenie od 70%</b><br />" + beautify(beggarPloxPrice) + " studentów (+" + beautify(beggarPloxMultiplier) + "klik, +" + beautify(beggarPloxDPS) + "studentów)<br />Kupionych:: <b>"+beautify(beggarPloxCounter)+"</b>";
 
-    document.getElementById("buyTaxMenButton").innerHTML = "<b>Wymagaj swoich rysunków</b><br />" + beautify(taxMenPrice) + " studentów (+" + beautify(taxMenMultiplier) + "klik, +" + beautify(taxMenDPS) + "studentów)<br />Kupionych:: <b>"+beautify(taxMenCounter)+"</b>";
+    document.getElementById("buyTaxMenButton").innerHTML = "<b>Dorzuć nieznaną nikomu dekompozycję na egzaminie</b><br />" + beautify(taxMenPrice) + " studentów (+" + beautify(taxMenMultiplier) + "klik, +" + beautify(taxMenDPS) + "studentów)<br />Kupionych:: <b>"+beautify(taxMenCounter)+"</b>";
 
-    document.getElementById("buyCreditCompanyButton").innerHTML = "<b>Egzamin ustny</b><br />" + beautify(creditCompanyPrice) + " studentów (+" + beautify(creditCompanyMultiplier) + "klik, +" +  beautify(creditCompanyDPS) + "studentów)<br />Kupionych:: <b>"+beautify(creditCompanyCounter)+"</b>";
+    document.getElementById("buyCreditCompanyButton").innerHTML = "<b>Pojedź do Berlina zamiast przyjść na wykład</b><br />" + beautify(creditCompanyPrice) + " studentów (+" + beautify(creditCompanyMultiplier) + "klik, +" +  beautify(creditCompanyDPS) + "studentów)<br />Kupionych:: <b>"+beautify(creditCompanyCounter)+"</b>";
 
     // Tier 3
-    document.getElementById("buySinagogaButton").innerHTML = "<b>Wrzuć zadania ze swojej pracy doktorskiej</b><br />" + beautify(sinagogaPrice) + " studentów (+" + beautify(sinagogaMultiplier) + "klik, +" + beautify(sinagogaDPS) + "studentów)<br />Kupionych:: <b>"+beautify(sinagogaCounter)+"</b>";
-    document.getElementById("buyJewHospitalButton").innerHTML = "<b>Nie przyjdź na egzamin, a potem powiedz, że nikt nie przyszedł</b><br />" + beautify(jewHospitalPrice) + " studentów (+" + beautify(jewHospitalMultiplier) + "klik, +" + beautify(jewHospitalDPS) + "studentów)<br />Kupionych:: <b>"+beautify(jewHospitalCounter)+"</b>";
+    document.getElementById("buySinagogaButton").innerHTML = "<b>Każ obejrzeć 3/4 wykładu na EPUEPSie</b><br />" + beautify(sinagogaPrice) + " studentów (+" + beautify(sinagogaMultiplier) + "klik, +" + beautify(sinagogaDPS) + "studentów)<br />Kupionych:: <b>"+beautify(sinagogaCounter)+"</b>";
+    document.getElementById("buyJewHospitalButton").innerHTML = "<b>Zorganizuj egzamin w sali obok półkolonii dla dzieci</b><br />" + beautify(jewHospitalPrice) + " studentów (+" + beautify(jewHospitalMultiplier) + "klik, +" + beautify(jewHospitalDPS) + "studentów)<br />Kupionych:: <b>"+beautify(jewHospitalCounter)+"</b>";
     document.getElementById("buyMcDonaldsButton").innerHTML = "<b>Wyznacz wszystkie egzaminy poprawkowe w tym samym dniu</b><br />" + beautify(mcDonaldsPrice) + " studentów (+" + beautify(mcDonaldsMultiplier) + "klik, +" + beautify(mcDonaldsDPS) + "studentów)<br />Kupionych:: <b>"+beautify(mcDonaldsCounter)+"</b>";
     document.getElementById("buyMassonButton").innerHTML = "<b>Ogłoś wyniki pierwszego terminu w marcu</b><br />" + beautify(massonPrice) + " studentów (+" + beautify(massonMultiplier) + "klik, +" + beautify(massonDPS) + "studentów)<br />Kupionych:: <b>"+beautify(massonCounter)+"</b>";
 
@@ -432,46 +432,54 @@ function zmienNapis() {
     var slogan = document.getElementById("slogan");
 
     if(ujebaniStudenciSuma <= 250) {
-        slogan.innerHTML = "Gra nie ma na celu obrażania i zniesławiania jakiejkolwiek osoby, instytucji lub Janusza.";
+        slogan.innerHTML = "Gra nie ma na celu obrażania i zniesławiania jakiejkolwiek osoby, instytucji lub Adama.";
     } else if(ujebaniStudenciSuma <= 500) {
-        slogan.innerHTML = "Zostałeś przydzielony na AGH.";
+        slogan.innerHTML = "Jesteś zwykłym profesorem jakich wielu.";
     } else if(ujebaniStudenciSuma <= 1000) {
+        slogan.innerHTML = "Pokazujesz studentom wyciąg z regulaminu studiów.";
+    } else if(ujebaniStudenciSuma <= 2000) {
+        slogan.innerHTML = "Zakazujesz pisać do siebie e-maile.";
+    } else if(ujebaniStudenciSuma <= 3000) {
+        slogan.innerHTML = "Grozisz studentom procesem za fałszowanie podpisów.";
+    } else if(ujebaniStudenciSuma <= 4000) {
         slogan.innerHTML = "Studenci zaczynają się niepokoić ilością i szybkością omawianego materiału.";
     } else if(ujebaniStudenciSuma <= 5000) {
         slogan.innerHTML = "Pojawiają się pierwsze głosy krytyki na twój temat.";
     } else if(ujebaniStudenciSuma <= 10000) {
         slogan.innerHTML = "Studenci nie wiedzą co dzieje się na wykładzie.";
     } else if(ujebaniStudenciSuma <= 20000) {
-        slogan.innerHTML = "Ćwiczeniowcy załamują ręcę nad twoimi pomysłami.";
+        slogan.innerHTML = "Podejrzewasz, że twoi doktorzy próbują chronić studentów przed tobą.";
     } else if(ujebaniStudenciSuma <= 35000) {
         slogan.innerHTML = "Na wykładzie ktoś krzyknął 'co ci zrobiłem ty ch**u'.";
     } else if(ujebaniStudenciSuma <= 50000) {
-        slogan.innerHTML = "Na twój temat powstają smutne piosenki.";
+        slogan.innerHTML = "Ptaki przestają ćwierkać kiedy wychodzisz z budynku.";
     } else if(ujebaniStudenciSuma <= 100000) {
-        slogan.innerHTML = "Inni wykładowcy patrzą z zazdrością na kolejki pod twoim gabinetem.";
+        slogan.innerHTML = "Przed twoim gabinetem funkcjonuje stały komitet kolejkowy.";
     } else if(ujebaniStudenciSuma <= 200000) {
         slogan.innerHTML = "Kadra naukowa ma cię za dziwaka.";
     } else if(ujebaniStudenciSuma <= 350000) {
-        slogan.innerHTML = "Zrujnowałeś już wiele ludzkich istnień.";
+        slogan.innerHTML = "Studenci szukają sposobów na twój egzamin.";
+    } else if(ujebaniStudenciSuma <= 400000) {
+        slogan.innerHTML = "Twoje nazwisko jest na wydziale synonimem warunku.";
     } else if(ujebaniStudenciSuma <= 500000) {
         slogan.innerHTML = "Przestajesz zwracać uwagę co piszesz na tablicy.";
     } else if(ujebaniStudenciSuma <= 750000) {
-        slogan.innerHTML = "Pierwsze przypadki samobójstw.";
+        slogan.innerHTML = "Powtarzanie twojego przedmiotu oficjalnie wpisano do planu studiów.";
     } else if(ujebaniStudenciSuma <= 1000000) {
-        slogan.innerHTML = "Studenci rozłożyli obóz i masowo protestują pod wydziałem matematyki stosowanej.";
+        slogan.innerHTML = "Powstaje wydziałowy telefon zaufania dla twoich ofiar.";
     } else if(ujebaniStudenciSuma <= 1250000) {
-        slogan.innerHTML = "Dostajesz gratulacje od premiera za milionowe wpływy z warunków do budżetu.";
+        slogan.innerHTML = "UAM otwiera kierunek Automatyka i Robotyka dla uchodźców z Politechniki.";
     } else if(ujebaniStudenciSuma <= 1500000) {
         slogan.innerHTML = "Uwaliłeś najwięcej studentów w historii uczelni jeszcze przed sesją.";
     } else if(ujebaniStudenciSuma <= 1750000) {
         slogan.innerHTML = "Wykładowcy z Korei Północnej przyjeżdżają podglądać twoje metody.";
     } else if(ujebaniStudenciSuma <= 2000000) {
-        slogan.innerHTML = "Już nikt nie dotrwał do inżyniera od 3 lat.";
+        slogan.innerHTML = "Średnia wieku na 1 roku to 35 lat.";
     } else if(ujebaniStudenciSuma <= 2500000) {
         slogan.innerHTML = "Zrozpaczeni rodzice studentów błagają żebyś odszedł oferując miliard dolarów i prywatny odrzutowiec.";
     } else if(ujebaniStudenciSuma <= 3000000) {
         slogan.innerHTML = "W kraju zostali już tylko studenci studiów humanistycznych.";
     } else {
-        slogan.innerHTML = "Już czas przestać ujebywać swoich studentów. Ktoś musi studiować.";
+        slogan.innerHTML = "Spierdalasz do Korei Północnej i projektujesz rakiety dla Kim Dzong Una.";
     }
 }

@@ -48,7 +48,7 @@
             function checkLength( o, n, min, max ) {
                 if ( o.val().length > max || o.val().length < min ) {
                     o.addClass( "ui-state-error" );
-                    updateTips( "Nazwa Janusza musi zawierać się między " +
+                    updateTips( "Nazwa Adama musi zawierać się między " +
                         min + " a " + max + " znaków." );
                     return false;
                 } else {
@@ -74,7 +74,7 @@
                         var bValid = true;
                         allFields.removeClass( "ui-state-error" );
                         bValid = bValid && checkLength( name, "username", 3, 16);
-                        bValid = bValid && checkRegexp( name, /^[a-z]([0-9a-z_])+$/i, "Nazwa Janusza musi się składać z a-z, 0-9, podkreśleń, oraz zaczynać literą." );
+                        bValid = bValid && checkRegexp( name, /^[a-z]([0-9a-z_])+$/i, "Nazwa Adama musi się składać z a-z, 0-9, podkreśleń, oraz zaczynać literą." );
                         if ( bValid ) {
                             $.post(
                                 "counter.php",
@@ -114,9 +114,9 @@
 
 
 
-<h1>Symulator Sesji u Janusza 2014</h1>
+<h1>Symulator Sesji u Dębca 2k17</h1>
 
-<div class="magicCenterElement" id="slogan">Gra nie ma na celu obrażania i zniesławiania jakiejkolwiek osoby, instytucji lub Janusza.</div>
+<div class="magicCenterElement" id="slogan">Gra nie ma na celu obrażania i zniesławiania jakiejkolwiek osoby, instytucji lub Adama.</div>
 
 <div class="shekelDisplay" id="shekelDisplay">0</div>
 <div class="shekelDisplay" id="shekelFlavorText">ujebanych studentów</div><br/>
@@ -131,7 +131,7 @@
     <br/><small id="multiplierDisplay"></small><br/>
     <small id="dpsDisplay"></small><br/>
     <small id="janusz_time2"></small><br/>
-    <center><button id="send_score">ZAPISZ SWÓJ WYNIK DO WIRTUALNEGO DZIEKANATU</button></center>
+    <!--<center><button id="send_score">ZAPISZ SWÓJ WYNIK DO WIRTUALNEGO DZIEKANATU</button></center>-->
 
 </div>
 
@@ -139,9 +139,9 @@
 
     <small>
         <br><b>
-        Gra ma na celu umożliwienie wejścia w skórę Janusza T. i odtworzenie jego ścieżki kariery zawodowej.
+        Gra ma na celu umożliwienie wejścia w skórę Adama D. i odtworzenie jego ścieżki kariery zawodowej.
         <br>
-        Polecam również stronę na której znajdziecie aktualne <a href="http://www.imir.agh.edu.pl/pl/studenci/blankiety_dokumenty/blankiety/" title="imir">ceny warunków na IMIRze i podania o kontynuowanie studiów z deficytem punktów ECTS.</a><br></b>
+        Polecamy również stronę na której znajdziecie aktualne <a href="https://www.put.poznan.pl/pl/finanse-i-stypendia/oplaty-i-umowy">ceny warunków na WI</a> i <a href="http://fc.put.poznan.pl/informacje-dla-studentow/wzory-i-poda-dokument-w,100.html">podania o kontynuowanie studiów z deficytem punktów ECTS.</a><br></b>
     </small>
 </div>
 <div class="magicCenterElement" id="shopContainer">
@@ -166,27 +166,13 @@
             <td><button class="buyButton" id="buyMassonButton" onclick="kup('masson')" disabled="disabled"><b>Ogłoś wyniki pierwszego terminu w marcu</b><br>200,000 studentów (+15klik, +25studentów)<br>Kupionych:: <b>0</b></button></td>
             <td><button class="buyButton" id="buyOdessaModeButton" onclick="kup('OdessaMode')" disabled="disabled"><b>Przygotuj test - wielokrotny wybór i żadna odpowiedź nie jest poprawna</b><br>500,000 studentów (Efekt: ???)</button>
             </td><td><button class="buyButton" id="buySteamButton" onclick="kup('steam')" disabled="disabled"><b>Zlikwiduj cały kierunek</b><br>750,000 studentów (2 razy więcej ujebanych studentów)</button>
-            <audio src="files/janusz.htm" id="ST" class="hidden"></audio></td>
+            <!--<audio src="files/janusz.htm" id="ST" class="hidden"></audio></td>-->
         </tr>
         </tbody></table>
     <div class="magicCenterElement" id="grafixContainer">
     </div>
 
-
-    <audio src="files/janusz.ogg" id="steam" class="hidden">
-
-        <div id="musicplayer"> 					</div>
-        <script>
-            var player2 = document.getElementById("steam");
-            function music_play2()
-            {
-                player2.play();
-            }
-
-
-        </script>
-
-    </audio></div>
+</div>
 
 <div id="bg_cont">
     <center>
@@ -211,7 +197,7 @@
     <p class="validateTips"><b>Uzupełnij</b></p>
     <form>
         <fieldset>
-            <label for="name"><b>Imię Janusza</b></label>
+            <label for="name"><b>Imię Adama</b></label>
             <input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all">
         </fieldset>
         <p><b>Ujebałeś studentów:</b></p>
